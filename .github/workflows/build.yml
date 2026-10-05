@@ -1,0 +1,49 @@
+name: Сборка и релиз
+
+# Запускается при публикации тега-версии, например: git tag v1.1.0 && git push --tags
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:   # можно запустить вручную из вкладки Actions
+
+permissions:
+  contents: write      # нужно, чтобы создать Release и приложить .exe
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Код
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Зависимости
+        run: pip install pyinstaller pystray Pillow
+
+      - name: Сборка ParentsSee.exe
+        run: >
+          pyinstaller --noconfirm --onefile --windowed --name ParentsSee
+          --icon assets/icon.ico
+          --collect-submodules pystray
+          --hidden-import PIL._tkinter_finder
+          --version-file version_info.txt
+          ParentsSee.pyw
+
+      - name: Публикация в Releases
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/ParentsSee.exe
+          generate_release_notes: true
+
+      - name: Артефакт (для ручного запуска)
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ParentsSee-exe
+          path: dist/ParentsSee.exe

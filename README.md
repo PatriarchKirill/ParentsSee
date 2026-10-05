@@ -174,6 +174,19 @@ pyinstaller --noconfirm --onefile --windowed --name ParentsSee ^
   --hidden-import PIL._tkinter_finder --version-file version_info.txt ParentsSee.pyw
 ```
 
+### Автоматический релиз (GitHub Actions)
+
+В репозитории настроен workflow [`.github/workflows/build.yml`](.github/workflows/build.yml).
+Чтобы выпустить новую версию, достаточно опубликовать тег:
+
+```bash
+git tag v1.1.0
+git push origin v1.1.0
+```
+
+GitHub сам соберёт `ParentsSee.exe` на `windows-latest` и приложит его к новому
+Release — после чего встроенные обновления подхватят его автоматически.
+
 ---
 
 ## 📂 Где лежат данные
