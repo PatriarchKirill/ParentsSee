@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Сборка PyInstaller (exe публикуется в GitHub Releases, не в репозитории)
+build/
+dist/
+*.spec
+
+# Данные приложения (хранятся в C:\ProgramData\ParentsSee, а не в репозитории)
+*.log
+
+# Windows / редакторы
+Thumbs.db
+desktop.ini
+ehthumbs.db
+.vscode/
+.idea/
