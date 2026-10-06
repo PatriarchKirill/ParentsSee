@@ -15,6 +15,12 @@
 
 Разработчик: **SVI**
 
+<br>
+
+[![Скачать ParentsSee.exe](https://img.shields.io/badge/⬇_Скачать-ParentsSee.exe-success?style=for-the-badge)](https://github.com/PatriarchKirill/ParentsSee/releases/latest/download/ParentsSee.exe)
+
+<sub>Скачается только один файл · Python не нужен</sub>
+
 </div>
 
 ---
@@ -77,8 +83,10 @@
 
 ### Готовый `.exe` (проще всего, Python не нужен)
 
-1. Скачайте `ParentsSee.exe` со страницы
-   **[Releases](https://github.com/PatriarchKirill/ParentsSee/releases/latest)**.
+1. Скачайте один файл —
+   **[ParentsSee.exe (последняя версия)](https://github.com/PatriarchKirill/ParentsSee/releases/latest/download/ParentsSee.exe)**.
+   Скачивается только `.exe`, без исходников. Все версии — на странице
+   [Releases](https://github.com/PatriarchKirill/ParentsSee/releases).
 2. Положите файл в постоянную папку и запустите двойным кликом.
 3. При первом запуске придумайте пароль родителя.
 
@@ -203,7 +211,7 @@ parentssee/        исходный код (агент, экран блокир�
 assets/            иконки
 docs/screenshots/  скриншоты для README
 ParentsSee.pyw     точка входа
-*.bat              запуск, установка и сборка
+*.bat              установка из исходников и сборка .exe
 ```
 
 ---
