@@ -78,7 +78,7 @@
 ### Готовый `.exe` (проще всего, Python не нужен)
 
 1. Скачайте `ParentsSee.exe` со страницы
-   **[Releases](https://github.com/YOUR-USERNAME/ParentsSee/releases/latest)**.
+   **[Releases](https://github.com/PatriarchKirill/ParentsSee/releases/latest)**.
 2. Положите файл в постоянную папку и запустите двойным кликом.
 3. При первом запуске придумайте пароль родителя.
 
@@ -126,7 +126,7 @@ python -m parentssee
 2. Прикрепите к релизу файл `ParentsSee.exe` (Assets).
 3. В поле «Адрес обновлений» впишите:
    ```
-   https://api.github.com/repos/YOUR-USERNAME/ParentsSee/releases/latest
+   https://api.github.com/repos/PatriarchKirill/ParentsSee/releases/latest
    ```
 
 Программа возьмёт версию из тега, ссылку на `.exe` из вложений и описание из
